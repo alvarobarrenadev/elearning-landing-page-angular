@@ -1,0 +1,26 @@
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as mx;
+
+header.main-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    ul {
+        @include mx.reset-list;
+    }
+
+    @include mx.breakpoint(tablethorizontal) {
+        margin-bottom: 70px;
+    }
+
+    @include mx.breakpoint(desktop) {
+        margin-bottom: 20px;
+    }
+}

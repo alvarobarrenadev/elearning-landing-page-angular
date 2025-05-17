@@ -1,0 +1,170 @@
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as mx;
+
+.hero {
+    margin-bottom: 65px;
+    @include mx.breakpoint(tablethorizontal) {
+        margin-bottom: 80px;
+    }
+
+    &__title {
+        margin-bottom: 26px;
+        font-size:40px;
+        font-weight: 800;
+        color: v.$black;
+    }
+
+    &__description {
+        margin-bottom: 26px;
+        color: v.$grey;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    &__buttons {
+        margin-bottom: 80px;
+    }
+
+    &__img {
+        text-align: center;
+        width: 90%;
+        margin-left: 5%;
+        position: relative;
+        // Responsive tablet
+        @include mx.breakpoint(tablet) {
+            width: 50%;
+            margin: 0;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            height: 500px;
+        }
+        
+        @include mx.breakpoint(desktop) {
+            width: 400px;
+        }
+
+        img {
+            max-width: 80%;
+        }
+
+        // Responsive tablet
+        &_mobile {
+            @include mx.breakpoint(tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__number {
+        display: inline-block;
+        width: max-content;
+        background-color: v.$white;
+        color: v.$black;
+        padding: 5px;
+        text-align: left;
+        position: absolute;
+        border-radius: 10px;
+        box-shadow: 0px 34px 54px 0px rgba(6, 22, 141, 0.16);
+        
+        span {
+            display: block;
+        }
+
+        &-title {
+            font-size: 14px;
+            color: v.$grey;
+            font-weight: 700;            
+        }
+
+        &-number {
+            font-size: 32px;
+            color: v.$black;
+            font-weight: 800;
+        }
+        
+        &-1 {
+            padding: 16px 20px;
+            top: 0;
+            right: 0;
+            position: absolute;
+            @include mx.breakpoint(tablet) {
+                top: -33px;
+            }
+            
+            @include mx.breakpoint(tablethorizontal) {
+                top: 135px;
+                right: 35px;
+                padding-right: 40px;
+            }
+
+            @include mx.breakpoint(desktop) {
+                top: 170px;
+                right: 60px;
+            }
+
+            @include mx.breakpoint(desktopxl) {
+                top: 140px;
+                right: -60px;
+            }
+        }
+
+        &-2 {
+            padding: 16px 35px 16px 20px;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            @include mx.breakpoint(tablet) {
+                left: 85px;
+                bottom: -10px;
+            }
+
+            @include mx.breakpoint(tablethorizontal) {
+                left: 5px;
+                bottom: 35px;
+                padding-right: 45px;
+            }
+            @include mx.breakpoint(desktop) {
+                left: -135px;
+                bottom: 15px;
+            }
+
+            @include mx.breakpoint(desktopxl) {
+                left: -15px;
+                bottom: 10px;
+            }
+        }
+
+    }
+
+    .container {
+        @include mx.breakpoint(tablet) {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 80px;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            padding-bottom: 100px;
+            align-items: center;
+        }
+
+        @include mx.breakpoint(desktop) {
+            padding-bottom: 90px;
+        }
+    }
+
+    &__content {
+        @include mx.breakpoint(tablet) {
+            width: 50%;
+        }
+
+        @include mx.breakpoint(tablethorizontal) {
+            width: 40%;
+        }
+
+        @include mx.breakpoint(desktop) {
+            max-width: 450px;
+        }
+    }
+}

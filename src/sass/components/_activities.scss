@@ -1,0 +1,75 @@
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as mx;
+
+.activities {
+    padding-bottom: 80px;
+    background: linear-gradient(180deg, #FFF 0%, #F0F1FF 100%);
+
+    &__header {
+        background-image: v.$gradient-pink-orange;
+        padding: 25px 30px;
+        color: v.$white;
+        border-radius: 10px;
+        margin-bottom: 50px;
+        @include mx.breakpoint(tablet) {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__item {
+        margin-bottom: 40px;
+        padding: 56px 28px 40px;
+        position: relative;
+        background-color: v.$white;
+        box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+        border-radius: 16px;
+        @include mx.breakpoint(tablet) {
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        
+        &_icon {
+            width: 56px;
+            height: 56px;
+            background-image: v.$gradient-pink-orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: -25px;
+        }
+        
+        &_title {
+            color: v.$black;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        
+        &_description {
+            font-size: 16px;
+            line-height: 26px;
+            color: v.$grey;
+            margin-bottom: 24px;
+        }
+    }
+
+   .container {
+        @include mx.breakpoint(tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px 20px;
+        }
+        
+        @include mx.breakpoint(tablethorizontal) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

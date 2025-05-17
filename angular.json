@@ -32,8 +32,11 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/sass/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/sass"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -91,8 +94,11 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/sass/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/sass"]
+            },
             "scripts": []
           }
         }
